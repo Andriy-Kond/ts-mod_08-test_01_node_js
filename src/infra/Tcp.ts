@@ -2,18 +2,18 @@ import 'reflect-metadata';
 import express from 'express';
 import { useExpressServer } from 'routing-controllers';
 
-import { IService } from '../types/serves'
+import { IService } from '../types/serves';
 
 import { controllers } from '../app/domain';
 
 export class Tcp implements IService {
-  private static instance:Tcp;
+  private static instance: Tcp; // SingleTone
 
   private routePrefix = '/api';
   public server = express();
 
-
-  constructor () {
+  // SingleTone
+  constructor() {
     if (!Tcp.instance) {
       Tcp.instance = this;
     }
@@ -21,7 +21,7 @@ export class Tcp implements IService {
     return Tcp.instance;
   }
 
-  async init () {
+  async init() {
     const { server, routePrefix } = this;
 
     useExpressServer(server, {
@@ -31,7 +31,6 @@ export class Tcp implements IService {
       defaultErrorHandler: true,
     });
 
-
     return new Promise<boolean>((resolve: any) => {
       server.listen(4000, () => {
         console.log('Tcp service started on port 4000');
@@ -39,8 +38,5 @@ export class Tcp implements IService {
         return resolve(true);
       });
     });
-
-    
-    
   }
 }

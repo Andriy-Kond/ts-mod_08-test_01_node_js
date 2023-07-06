@@ -23,7 +23,7 @@
 
     // "jsx": "preserve",                                /* Specify what JSX code is generated. */
     "experimentalDecorators": true /* Вмикає декоратори. Enable experimental support for legacy experimental decorators. */,
-    // "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
+    "emitDecoratorMetadata": true /* Emit design-type metadata for decorated declarations in source files. */,
     // "jsxFactory": "",                                 /* Specify the JSX factory function used when targeting React JSX emit, e.g. 'React.createElement' or 'h'. */
     // "jsxFragmentFactory": "",                         /* Specify the JSX Fragment reference used for fragments when targeting React JSX emit e.g. 'React.Fragment' or 'Fragment'. */
     // "jsxImportSource": "",                            /* Specify module specifier used to import the JSX factory functions when using 'jsx: react-jsx*'. */
@@ -34,9 +34,9 @@
 
     /* Modules */
     "module": "commonjs" /* Specify what module code is generated. як транслювати модулі js при include файлу.*/,
-    "rootDir": "./src" /* Specify the root folder within your source files. */,
+
     // "moduleResolution": "node10",                     /* Specify how TypeScript looks up a file from a given module specifier. */
-    // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
+    "baseUrl": "./src" /* Для відносних шляхів Specify the base directory to resolve non-relative module names. */,
     // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
@@ -65,6 +65,7 @@
     // "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
 
     "outDir": "./dist" /* Specify an output folder for all emitted files. куди зберігати скомпільовані файли */,
+    "rootDir": "./src" /* Specify the root folder within your source files. */,
     "removeComments": true /* Disable emitting comments.  Видалить коментарі у скомпільованому файлі */,
 
     // "noEmit": true,                                   /* Disable emitting files from a compilation. */
